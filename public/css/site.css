@@ -1,0 +1,51 @@
+* {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body {
+    background-color: rgb(69, 74, 78)
+}
+
+.jumbotron {
+    margin-top: -50px;
+    border-bottom: 4px solid black;
+}
+
+.list-group-item {
+    font-variant: small-caps;
+}
+
+.add {
+    position: fixed;
+    bottom: 0;
+}
+
+.delete-button {    
+    background-color: transparent;
+    border: none;
+}
+
+#mainDiv {
+    height: 100vh;
+    /* background-color: rgb(69, 74, 78); */
+}
+
+#trainSchedule {
+    margin-top: -90px;
+}
+
+#trackedTrains {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#update {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+
+#sec {
+    display: inline-block;
+}

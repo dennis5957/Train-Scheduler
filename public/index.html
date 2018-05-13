@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/site.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Train Track</h1>
+                <p class="lead">Is your train on-time? Delayed? Find out now.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="trainSchedule" class="list-group border border-primary rounded-top border-light">
+                <a href="#" class="list-group-item list-group-item-action active font-weight-bold bg-dark border-dark">
+                    Current Train Schedule
+                </a>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="font-weight-bold col-1 text-center">Remove</div>
+                        <div class="font-weight-bold col-3 text-center">Train Name</div>
+                        <div class="font-weight-bold col-3 text-center">Destination</div>
+                        <div class="font-weight-bold col-1 text-center">Frequency (min)</div>
+                        <div class="font-weight-bold col-2 text-center">Next Arrival</div>
+                        <div class="font-weight-bold col-2 text-center">Minutes Away</div>
+                    </div>
+                </div>
+                <div id="trackedTrains">
+                    <!-- Sample Train Schedule -->
+                    <!-- <div id="9f8asn8and8fn" class="list-group-item">
+                        <div class="row">
+                            <button class="delete-button" type="button" data-key="_3j39naaih"><i class="fas fa-minus-square"></i></button>
+                            <div class="col-3 text-center">Charlotte Express</div>
+                            <div class="col-3 text-center">Charlote, NC</div>
+                            <div class="col-2 text-center">65</div>
+                            <div class="col-2 text-center">05:35 PM</div>
+                            <div class="col-2 text-center">17</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <br>
+            <div id="add" class="list-group border border-primary rounded-top border-light">
+                <a href="#" class="list-group-item list-group-item-action active font-weight-bold border-dark bg-dark">
+                    Add A New Train
+                </a>
+                <form id="trainForm" class="m-3">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="trainName" class="font-weight-bold">Train Name</label>
+                            <input type="text" required class="form-control" name="trainName" id="trainName" placeholder="Enter a Train Name">
+                        </div>
+                        <div class="form-group col">
+                            <label for="destination" class="font-weight-bold">Destination</label>
+                            <input type="text" required class="form-control" name="destination" id="destination" placeholder="Enter a Destination">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="firstTime" class="font-weight-bold">Enter the First Train Arrival Time</label>
+                            <input type="time" required class="form-control" name="firstTime" id="firstTime">
+                        </div>
+                        <div class="form-group col">
+                            <label for="frequency" class="font-weight-bold">Enter a Frequency</label>
+                            <div class="input-group">
+                                <input type="text" required class="form-control" name="frequency" id="frequency" placeholder="45">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="minutesAddon">minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="addTrain" type="submit" class="btn btn-primary">Schedule This Train</button>
+                </form>
+            </div>
+        </div>
+        <div id="update" class="">
+            <h5>Update Rate (
+                <span id="sec"></span> sec)</h5>
+            <span>5</span>
+            <input id="updateRate" type="range" min="5" max="60" step="5" />
+            <span>60</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
